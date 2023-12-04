@@ -1008,6 +1008,10 @@ Instance::Instance(int argc, char **argv) {
                 }
             }
 
+            if (icEvent.inputContext()->hasFocus()) {
+                return;
+            }
+
             if (!d->globalConfig_.showInputMethodInformationWhenFocusIn() ||
                 icEvent.inputContext()->capabilityFlags().test(
                     CapabilityFlag::Disable)) {
